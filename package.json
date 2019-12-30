@@ -1,0 +1,16 @@
+{
+  "name": "baby-tracker-iot-button",
+  "version": "1.0.0",
+  "description": "Log diapers to Baby Tracker from an AWS IoT Button.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt McCormick",
+  "dependencies": {
+    "request": "^2.88.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "uuid": "^3.3.3"
+  }
+}
