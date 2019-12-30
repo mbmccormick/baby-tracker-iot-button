@@ -11,6 +11,8 @@ This will involve registering the AWS IoT Button on the AWS Management Console, 
 
 Upload the code for the AWS Lambda Function by following the instructions here: https://docs.aws.amazon.com/lambda/latest/dg/programming-model.html
 
+Connect your AWS IoT Button as a trigger for the AWS Lambda Function.
+
 Create three environment variables on your AWS Lambda Function:
 
 `DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://guidgenerator.com/online-guid-generator.aspx to generate this.
