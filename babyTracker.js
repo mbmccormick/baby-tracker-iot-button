@@ -4,7 +4,7 @@ const uuidv4 = require("uuid/v4");
 
 const DeviceName = "Node.js";
 const DeviceOSInfo = "Node.js 1.0.0";
-const DeviceUUID = "02762f93-138e-4200-a01d-83b6a508fa9f";
+const DeviceUUID = "34f27354-6b5a-4823-ba58-6421eca58daf";
 
 moment.tz.setDefault("America/Los_Angeles");
 
