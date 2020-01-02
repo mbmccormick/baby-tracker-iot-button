@@ -11,7 +11,7 @@ moment.tz.setDefault("America/Los_Angeles");
 exports.login = async function(username, password) {
     console.log("Logging in to Baby Tracker service.");
 
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         request({
             method: "POST",
             url: "https://prodapp.babytrackers.com/session",
@@ -41,13 +41,13 @@ exports.login = async function(username, password) {
 
             resolve();
         });
-    }));
+    });
 }
 
 async function getDevices() {
     console.log("Fetching devices from Baby Tracker service.");
 
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         request({
             method: "GET",
             url: "https://prodapp.babytrackers.com/account/device",
@@ -66,13 +66,13 @@ async function getDevices() {
 
             resolve(data);
         });
-    }));
+    });
 }
 
 async function getLatestTransactionForDevice(device) {
     console.log("Fetching transactions for " + device.DeviceUUID + " from Baby Tracker service.");
 
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         request({
             method: "GET",
             url: "https://prodapp.babytrackers.com/account/transaction/" + device.DeviceUUID + "/" + (device.LastSyncID - 1),
@@ -93,7 +93,7 @@ async function getLatestTransactionForDevice(device) {
 
             resolve(transaction);
         });
-    }));
+    });
 }
 
 async function getLatestBabyObject() {
@@ -171,7 +171,7 @@ async function createDiaper(type, note) {
 
     var syncId = await getLastSyncId();
 
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         request({
             method: "POST",
             url: "https://prodapp.babytrackers.com/account/transaction",
@@ -193,7 +193,7 @@ async function createDiaper(type, note) {
 
             resolve();
         });
-    }));
+    });
 }
 
 exports.createWetDiaper = async function(note) {
@@ -227,7 +227,7 @@ exports.createSleep = async function(startTime, duration, note) {
 
     var syncId = await getLastSyncId();
 
-    return new Promise(((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         request({
             method: "POST",
             url: "https://prodapp.babytrackers.com/account/transaction",
@@ -249,5 +249,5 @@ exports.createSleep = async function(startTime, duration, note) {
 
             resolve();
         });
-    }));
+    });
 }
