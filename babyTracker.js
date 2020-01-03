@@ -91,6 +91,7 @@ async function getLatestTransactionForDevice(device) {
             var data = JSON.parse(body);
 
             var transaction = Buffer.from(data[0].Transaction, "base64").toString("ascii");
+            transaction = JSON.parse(transaction);
 
             console.log("Fetch latest transaction succeeded.");
 
@@ -114,7 +115,7 @@ async function getLatestBabyObject() {
     var latestTimestamp = moment("1970-01-01");
 
     for (var i = 0; i < transactions.length; i++) {
-        var transaction = JSON.parse(transactions[i]);
+        var transaction = transactions[i];
         var timestamp = moment(transaction.timestamp, "YYYY-MM-DD HH:mm:ss ZZ");
 
         if (timestamp > latestTimestamp) {
@@ -184,6 +185,7 @@ exports.getTransactions = async function (maximum) {
 
             for (var i = 0; i < data.length; i++) {
                 var transaction = Buffer.from(data[0].Transaction, "base64").toString("ascii");
+                transaction = JSON.parse(transaction);
 
                 transactions.push(transaction);
             }
