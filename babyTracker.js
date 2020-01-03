@@ -4,12 +4,15 @@ const uuidv4 = require("uuid/v4");
 
 const DeviceName = "Node.js";
 const DeviceOSInfo = "Node.js 1.0.0";
-const DeviceUUID = "d9ecd8c2-0610-4e67-bf35-63fc31eb9ffa";
+
+var DeviceUUID = "00000000-0000-0000-0000-000000000000";
 
 moment.tz.setDefault("America/Los_Angeles");
 
-exports.login = async function(username, password) {
+exports.login = async function(username, password, deviceUuid) {
     console.log("Logging in to Baby Tracker service.");
+
+    DeviceUUID = deviceUuid;
 
     return new Promise((resolve, reject) => {
         request({

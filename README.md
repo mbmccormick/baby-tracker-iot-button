@@ -13,11 +13,13 @@ Upload the code for the AWS Lambda Function by following the instructions here: 
 
 Connect your AWS IoT Button as a trigger for the AWS Lambda Function.
 
-Create two environment variables on your AWS Lambda Function:
+Create three environment variables on your AWS Lambda Function:
 
 `EMAIL_ADDRESS` - The email address for your Baby Tracker account.
 
 `PASSWORD` - The password for your Baby Tracker account.
+
+`DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://guidgenerator.com/online-guid-generator.aspx to generate this.
 
 
 ## Usage
