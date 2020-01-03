@@ -207,7 +207,7 @@ exports.createDirtyDiaper = async function(note) {
     await createDiaper("1", note);
 }
 
-exports.createSleep = async function(startTime, duration, note) {
+exports.createSleep = async function(startTime, minutes, note) {
     console.log("Posting sleep record to Baby Tracker service.");
     
     var babyObject = await getLatestBabyObject();
@@ -215,12 +215,12 @@ exports.createSleep = async function(startTime, duration, note) {
 
     var data = {
         BCObjectType: "Sleep",
-        duration: duration,
+        duration: minutes,
         baby: babyObject,
         note: note,
         pictureLoaded: true,
         pictureNote: [],
-        time: moment(startTime, "YYYY-MM-DD HH:mm:ss ZZ"),
+        time: moment(startTime).format("YYYY-MM-DD HH:mm:ss ZZ"),
         newFlage: true,
         objectID: uuidv4(),
         timestamp: timestamp
