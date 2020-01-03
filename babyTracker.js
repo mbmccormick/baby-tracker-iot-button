@@ -45,7 +45,7 @@ exports.login = async function(username, password, deviceUuid) {
             resolve();
         });
     });
-}
+};
 
 async function getDevices() {
     console.log("Fetching devices from Baby Tracker service.");
@@ -73,7 +73,7 @@ async function getDevices() {
 }
 
 async function getLatestTransactionForDevice(device) {
-    console.log("Fetching transactions for " + device.DeviceUUID + " from Baby Tracker service.");
+    console.log("Fetching latest transaction for " + device.DeviceUUID + " from Baby Tracker service.");
 
     return new Promise((resolve, reject) => {
         request({
@@ -92,7 +92,7 @@ async function getLatestTransactionForDevice(device) {
 
             var transaction = Buffer.from(data[0].Transaction, "base64").toString("ascii");
 
-            console.log("Fetch transactions succeeded.");
+            console.log("Fetch latest transaction succeeded.");
 
             resolve(transaction);
         });
@@ -150,6 +150,49 @@ async function getLastSyncId() {
     }
 }
 
+exports.getTransactionsForDevice = async function (device, maximum) {
+    console.log("Fetching transactions for " + device.DeviceUUID + " from Baby Tracker service.");
+
+    if (maximum == undefined) {
+        maximum = 1;
+    }
+
+    var start = device.LastSyncID - maximum;
+
+    if (start < 0) { 
+        start = 0;
+    }
+
+    return new Promise((resolve, reject) => {
+        request({
+            method: "GET",
+            url: "https://prodapp.babytrackers.com/account/transaction/" + device.DeviceUUID + "/" + start,
+            jar: true
+        },
+        function (err, response, body) {
+            if (err) {
+                console.log("ERROR: " + err);
+                
+                reject(err);
+            }
+        
+            var data = JSON.parse(body);
+
+            var transactions = [];
+
+            for (var i = 0; i < data.length; i++) {
+                var transaction = Buffer.from(data[0].Transaction, "base64").toString("ascii");
+
+                transactions.push(transaction);
+            }
+
+            console.log("Fetch transactions succeeded.");
+
+            resolve(transactions);
+        });
+    });
+};
+
 async function createDiaper(type, note) {
     console.log("Posting diaper record to Baby Tracker service.");
 
@@ -201,11 +244,11 @@ async function createDiaper(type, note) {
 
 exports.createWetDiaper = async function(note) {
     await createDiaper("0", note);
-}
+};
 
 exports.createDirtyDiaper = async function(note) {
     await createDiaper("1", note);
-}
+};
 
 exports.createSleep = async function(startTime, minutes, note) {
     console.log("Posting sleep record to Baby Tracker service.");
@@ -253,4 +296,4 @@ exports.createSleep = async function(startTime, minutes, note) {
             resolve();
         });
     });
-}
+};
