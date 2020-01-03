@@ -150,14 +150,16 @@ async function getLastSyncId() {
     }
 }
 
-exports.getTransactionsForDevice = async function (device, maximum) {
-    console.log("Fetching transactions for " + device.DeviceUUID + " from Baby Tracker service.");
+exports.getTransactions = async function (maximum) {
+    console.log("Fetching transactions from Baby Tracker service.");
 
     if (maximum == undefined) {
         maximum = 1;
     }
 
-    var start = device.LastSyncID - maximum;
+    var lastSyncId = await getLastSyncId();
+
+    var start = lastSyncId - maximum;
 
     if (start < 0) { 
         start = 0;
@@ -166,7 +168,7 @@ exports.getTransactionsForDevice = async function (device, maximum) {
     return new Promise((resolve, reject) => {
         request({
             method: "GET",
-            url: "https://prodapp.babytrackers.com/account/transaction/" + device.DeviceUUID + "/" + start,
+            url: "https://prodapp.babytrackers.com/account/transaction/" + DeviceUUID + "/" + start,
             jar: true
         },
         function (err, response, body) {
