@@ -254,6 +254,10 @@ exports.createDirtyDiaper = async function(note) {
     await createDiaper("1", note);
 };
 
+exports.createMixedDiaper = async function(note) {
+    await createDiaper("2", note);
+};
+
 exports.createSleep = async function(startTime, minutes, note) {
     console.log("Posting sleep record to Baby Tracker service.");
     

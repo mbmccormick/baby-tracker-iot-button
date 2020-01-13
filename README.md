@@ -24,12 +24,12 @@ Create three environment variables on your AWS Lambda Function:
 
 ## Usage
 
-Press the button one time to log a wet diaper. Press the button two times to log a dirty diaper.
+Press the button one time to log a wet diaper. Press the button two times to log a dirty diaper. Long press the button to log a mixed diaper.
 
 
 ## Known Issues
 
-If the button is not logging to the Baby Tracker app for some reason, disconnect your mobile device(s) from the group in the Baby Tracker app. Then reconnect one device to the group, selecting the Reset Group option when reconnecting. This should clear out any sync issues and recreate the group.
+If the button is not logging to the Baby Tracker app for some reason, generate a new UUID for the `DEVICE_UUID`. Disconnect your mobile device(s) from the group in the Baby Tracker app. Then reconnect one device to the group, selecting the Reset Group option when reconnecting. This should clear out any sync issues and recreate the group.
 
 
 ## License
