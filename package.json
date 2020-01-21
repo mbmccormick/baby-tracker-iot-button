@@ -1,5 +1,5 @@
 {
-  "name": "baby-tracker-iot-button",
+  "name": "babytracker-iot-button",
   "version": "1.0.0",
   "description": "Log diapers to Baby Tracker from an AWS IoT Button.",
   "main": "index.js",
