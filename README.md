@@ -1,4 +1,4 @@
-# baby-tracker-iot-button
+# babytracker-iot-button
 
 This is an [AWS Lambda](https://aws.amazon.com/lambda/) function written in Node.js that logs a diaper change to the [Baby Tracker](https://apps.apple.com/app/appname/id779656557) app when an [AWS IoT Button](https://aws.amazon.com/iotbutton/) is pressed.
 
