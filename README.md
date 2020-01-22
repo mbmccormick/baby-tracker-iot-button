@@ -13,7 +13,7 @@ Upload the code for the AWS Lambda Function by following the instructions here: 
 
 Connect your AWS IoT Button as a trigger for the AWS Lambda Function.
 
-Configure your AWS Lambda Function to use the Node.js 12.x runtime and allow for a 30 second timeout.
+Configure your AWS Lambda Function to use the Node.js 12.x runtime and allow for one minute timeout.
 
 Create three environment variables on your AWS Lambda Function:
 
