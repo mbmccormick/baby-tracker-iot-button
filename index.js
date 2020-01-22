@@ -15,4 +15,6 @@ exports.handler = async function (event, context, callback) {
         await babyTracker.login(process.env.EMAIL_ADDRESS, process.env.PASSWORD, process.env.DEVICE_UUID);
         await babyTracker.createMixedDiaper("Logged from AWS IoT Button.");
     }
+
+    console.log("Completed.");
 };

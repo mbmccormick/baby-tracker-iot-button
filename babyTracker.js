@@ -34,8 +34,16 @@ exports.login = async function(username, password, deviceUuid) {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
@@ -57,12 +65,20 @@ async function getDevices() {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
-        
+
             var data = JSON.parse(body);
 
             console.log("Fetch devices succeeded.");
@@ -82,12 +98,20 @@ async function getLatestTransactionForDevice(device) {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
-        
+
             var data = JSON.parse(body);
 
             var transaction = Buffer.from(data[0].Transaction, "base64").toString("ascii");
@@ -173,12 +197,20 @@ exports.getTransactions = async function (maximum) {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
-        
+
             var data = JSON.parse(body);
 
             var transactions = [];
@@ -233,8 +265,16 @@ async function createDiaper(type, note) {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
@@ -293,8 +333,16 @@ exports.createSleep = async function(startTime, minutes, note) {
             jar: true
         },
         function (err, response, body) {
-            if (err) {
-                console.log("ERROR: " + err);
+            if (err || response.statusCode >= 400) {
+                console.error("ERROR: " + response.statusCode);
+
+                if (err) {
+                    console.error("ERROR: " + err);
+                }
+
+                if (body) {
+                    console.error("ERROR: " + body);
+                }
                 
                 reject(err);
             }
