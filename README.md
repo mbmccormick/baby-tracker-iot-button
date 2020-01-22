@@ -21,7 +21,7 @@ Create three environment variables on your AWS Lambda Function:
 
 `PASSWORD` - The password for your Baby Tracker account.
 
-`DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://guidgenerator.com/online-guid-generator.aspx to generate this.
+`DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://guidgen.com to generate this.
 
 
 ## Usage
@@ -31,7 +31,7 @@ Press the button one time to log a wet diaper. Press the button two times to log
 
 ## Known Issues
 
-If the button is not logging to the Baby Tracker app for some reason, generate a new UUID for the `DEVICE_UUID`. Disconnect your mobile device(s) from the group in the Baby Tracker app. Then reconnect one device to the group, selecting the Reset Group option when reconnecting. This should clear out any sync issues and recreate the group.
+If the button is not logging to the Baby Tracker app for some reason or you see the error `Account has been reset. Please login again.` in your logs, generate a new UUID for the `DEVICE_UUID`. Disconnect your mobile device(s) from the group in the Baby Tracker app. Then reconnect one device to the group, selecting the Reset Group option when reconnecting. This should clear out any sync issues and recreate the group.
 
 
 ## License
