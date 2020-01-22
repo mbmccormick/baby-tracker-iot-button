@@ -21,7 +21,7 @@ Create three environment variables on your AWS Lambda Function:
 
 `PASSWORD` - The password for your Baby Tracker account.
 
-`DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://guidgen.com to generate this.
+`DEVICE_UUID` - Generate a random UUID and paste it here. You can use a site like https://www.guidgen.com to generate this.
 
 
 ## Usage
