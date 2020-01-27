@@ -35,14 +35,14 @@ exports.login = async function(username, password, deviceUuid) {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
@@ -66,14 +66,14 @@ async function getDevices() {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
@@ -99,14 +99,14 @@ async function getLatestTransactionForDevice(device) {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
@@ -198,14 +198,14 @@ exports.getTransactions = async function (maximum) {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
@@ -266,14 +266,14 @@ async function createDiaper(type, note) {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
@@ -334,14 +334,14 @@ exports.createSleep = async function(startTime, minutes, note) {
         },
         function (err, response, body) {
             if (err || response.statusCode >= 400) {
-                console.error("ERROR: " + response.statusCode);
+                console.error("Status Code = " + response.statusCode);
 
                 if (err) {
-                    console.error("ERROR: " + err);
+                    console.error(err);
                 }
 
                 if (body) {
-                    console.error("ERROR: " + body);
+                    console.error(body);
                 }
                 
                 reject(err);
