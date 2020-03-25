@@ -37,3 +37,7 @@ If the button is not logging to the Baby Tracker app for some reason or you see 
 ## License
 
 This software, and its dependencies, are distributed free of charge and licensed under the GNU General Public License v3. For more information about this license and the terms of use of this software, please review the `LICENSE.txt` file.
+
+&nbsp;
+
+Made with ❤️ for Elliana.
