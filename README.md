@@ -26,7 +26,11 @@ Create three environment variables on your AWS Lambda Function:
 
 ## Usage
 
-Press the button one time to log a wet diaper. Press the button two times to log a dirty diaper. Long press the button to log a mixed diaper.
+Press the button one time to log a wet diaper.
+
+Press the button two times to log a dirty diaper.
+
+Long press the button to log a mixed diaper.
 
 
 ## Known Issues
