@@ -1,6 +1,6 @@
 const request = require("request");
 const moment = require("moment-timezone");
-const uuidv4 = require("uuid");
+import { v4 as uuidv4 } from "uuid";
 
 const DeviceName = "Node.js";
 const DeviceOSInfo = "Node.js 1.0.0";
