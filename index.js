@@ -1,7 +1,8 @@
 const babyTracker = require("./babyTracker.js");
 
 exports.handler = async function (event, context, callback) {
-    console.log("Received " + event.clickType + " click event from " + event.serialNumber + ".");
+    console.log("Received event:");
+    console.log(event);
 
     if (event.clickType == "SINGLE") {
         await babyTracker.login(process.env.EMAIL_ADDRESS, process.env.PASSWORD, process.env.DEVICE_UUID);
